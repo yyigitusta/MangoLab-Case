@@ -6,7 +6,7 @@ For each finding: what is wrong, what it does to a customer (not to a linter),
 and how you would verify it.
 
 ## 1.
-Ne yanlış: Bellekteki önbellek sözlüğü (_cache) anahtar olarak yalnızca f"{base}-{target}" değerini kullanıyor ve istenen tarihi (on) tamamen göz ardı ediyor.
+Ne yanlış: Bellekteki önbellek sözlüğü (_cache) anahtar olarak yalnızca f"{base}-{target}" değerini kullanıyor ve istenen tarihi (on) önemsenmiyor.
 
 Müşteriye etkisi: Bir müşteri geçmiş bir tarihe ait kur istediğinde (örneğin 2020 yılı), bu kur önbelleğe alınır. Hemen ardından başka bir müşteri güncel kuru istediğinde, sistem güncel kur yerine önbellekteki eski tarihli kuru döner. Bu durum, ödeme yapan müşterilerin tamamen yanlış finansal hesaplamalar yapmasına ve doğrudan maddi zarara uğramasına yol açar.
 
@@ -28,6 +28,7 @@ Nasıl doğrulanır: Geçmiş bir Pazar günü için istek at. JSON yanıtındak
 
 ## The one I would fix before shipping tonight
 Önbellek anahtarına tarihi de dahil etmek (f"{base}-{target}-{on}"). Geçmiş kurları güncel kurmuş gibi ödeme yapan müşterilere sunmak, güven sarsıcı ve doğrudan maddi kayba yol açacak kadar büyük bir veri bütünlüğü hatasıdır.
+Ayrıca validasyon işlemlerinde müşteriyi bilgilendirecek dönüşler sağlanmalı.
 
 ## Things that look suspicious but are fine
 Ben herhangi bir sorun bulamadım (Kod çalıştırmayan) ancak ai ile sohbetimde from anahtar kelimesinin rezerv olmasından dolayı from_ parametre adlandırmasının sorun olabileceğini söyledi.
