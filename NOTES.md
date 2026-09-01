@@ -14,4 +14,4 @@ Daha fazla geliştirme yapmam gereken validasyonlar olabilir. Testler sonrası b
 Hızlı prototipleme yapmak, `pytest` test ortamını kurmak ve `respx` kullanarak internetsiz (mock) test senaryolarını hızlıca inşa etmek için bir yapay zeka asistanı kullandım.Ayrıca syntaxına alışkın olmadığım bir dili yazmamda yardımcı oldu
 ## One thing the AI got wrong
 
-API'ye istek atacağımız kodu yazarken, yapay zeka parametreleri `params={"from": from_, "to": to}` şeklinde isimlendirdi. Bu, dış API'nin 404 (Not Found) fırlatmasına sebep oldu çünkü Frankfurter API'si parametre isimlerini `base` ve `symbols` olarak bekliyordu. Swagger UI üzerinden manuel test yaparken bu sorunu fark ettim ve parametre anahtarlarını düzelterek yönlendirme sorununu (routing issue) çözdüm.
+API'ye istek atacağımız kodu yazarken, yapay zeka parametreleri ` params={"from": from_, "to": to} ` şeklinde isimlendirdi. Bu, dış API'nin 404 (Not Found) fırlatmasına sebep oldu çünkü Frankfurter API'si parametre isimlerini ` base ` ve ` symbol s` olarak bekliyordu. Swagger UI üzerinden manuel test yaparken bu sorunu fark ettim ve parametre anahtarlarını düzelterek yönlendirme sorununu (routing issue) çözdüm.
